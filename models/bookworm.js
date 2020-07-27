@@ -4,7 +4,7 @@ const bookSchema = mongoose.Schema({
     authors: {type: Array, required: true},
     subtitle: {type: String},
     description: {type: String},
-    thumbnail: {type: String, default: "../public/book_default_thumbnail.jpeg"},
+    thumbnail: {type: String, default: "https://imgur.com/a/lhg05iI"},
     smallimg: {type: String}, 
     isFavorite: {type: Boolean, default: false},
     myCollection: {type: Boolean}
