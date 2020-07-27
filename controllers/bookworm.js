@@ -11,6 +11,10 @@ bookworm.get('/', (req, res)=>{
     })
 })
 
+bookworm.get('/defaultimg', (req, res)=>{
+    res.sendFile('book_default_thumbnail.jpeg', {root: 'public'})
+})
+
 bookworm.post('/', (req, res)=>{
     Bookworm.create(req.body, (err, createdBook)=>{
         if(err){

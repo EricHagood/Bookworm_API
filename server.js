@@ -17,12 +17,13 @@ mongoose.connection.once('open', ()=>{
 
 
 app.use(express.json());
-const whitelist = ['http://localhost:3000', 'https://mighty-meadow-95753.herokuapp.com']
+const whitelist = ['http://localhost:3000', 'https://mighty-meadow-95753.herokuapp.com', 'http://localhost']
 const corsOptions = {
     origin: function(origin, callback){
-        if(whitelist.indexOf(origin) !== -1){
+        if(whitelist.indexOf(origin) !== -1 || !origin){
             callback(null, true)
         }else{
+            console.log(origin)
             callback(new Error('Not allowed by CORS'))
         }
     }
