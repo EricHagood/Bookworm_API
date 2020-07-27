@@ -17,7 +17,7 @@ mongoose.connection.once('open', ()=>{
 
 
 app.use(express.json());
-const whitelist = ['http://localhost:3000', 'https://floating-badlands-37817.herokuapp.com/']
+const whitelist = ['http://localhost:3000', 'https://mighty-meadow-95753.herokuapp.com/']
 const corsOptions = {
     origin: function(origin, callback){
         if(whitelist.indexOf(origin) !== -1){
